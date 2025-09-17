@@ -1,0 +1,83 @@
+@import "tailwindcss";
+/* removido: @import "tw-animate-css"; */
+
+/* Não precisa de @custom-variant dark; Tailwind já suporta .dark */
+@theme {
+  --color-primary-50:  #f9fafb;
+  --color-primary-100: #f3f4f6;
+  --color-primary-200: #e5e7eb;
+  --color-primary-300: #d1d5db;
+  --color-primary-400: #9ca3af;
+  --color-primary-500: #6b7280;
+  --color-primary-600: #4b5563;
+  --color-primary-700: #374151;
+  --color-primary-800: #1f2937;
+  --color-primary-900: #111827;
+  --color-primary-950: #0a0a0a;
+
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+  --color-accent: #4b5563;
+  --color-accent-foreground: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-ring: #4b5563;
+}
+
+/* Expor também fora de @theme para facilitar override dinâmico */
+:root {
+  color-scheme: light;
+  --color-background: #ffffff;
+  --color-foreground: #111827;
+  --color-accent: #4b5563;
+  --color-accent-foreground: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-ring: #4b5563;
+
+  --sidebar:  hsl(0 0% 98%);
+  --sidebar-foreground:  hsl(240 5.3% 26.1%);
+  --sidebar-primary:  hsl(240 5.9% 10%);
+  --sidebar-primary-foreground:  hsl(0 0% 98%);
+  --sidebar-accent:  hsl(240 4.8% 95.9%);
+  --sidebar-accent-foreground:  hsl(240 5.9% 10%);
+  --sidebar-border:  hsl(220 13% 91%);
+  --sidebar-ring:  hsl(217.2 91.2% 59.8%);
+}
+
+.dark {
+  color-scheme: dark;
+  --color-background: #0a0a0a;
+  --color-foreground: #f9fafb;
+  --color-accent: #9ca3af;
+  --color-accent-foreground: #111827;
+  --color-border: #1f2937;
+  --color-ring: #9ca3af;
+
+  --sidebar:  hsl(240 5.9% 10%);
+  --sidebar-foreground:  hsl(240 4.8% 95.9%);
+  --sidebar-primary:  hsl(224.3 76.3% 48%);
+  --sidebar-primary-foreground:  hsl(0 0% 100%);
+  --sidebar-accent:  hsl(240 3.7% 15.9%);
+  --sidebar-accent-foreground:  hsl(240 4.8% 95.9%);
+  --sidebar-border:  hsl(240 3.7% 15.9%);
+  --sidebar-ring:  hsl(217.2 91.2% 59.8%);
+}
+
+@theme inline {
+  --color-sidebar:  var(--sidebar);
+  --color-sidebar-foreground:  var(--sidebar-foreground);
+  --color-sidebar-primary:  var(--sidebar-primary);
+  --color-sidebar-primary-foreground:  var(--sidebar-primary-foreground);
+  --color-sidebar-accent:  var(--sidebar-accent);
+  --color-sidebar-accent-foreground:  var(--sidebar-accent-foreground);
+  --color-sidebar-border:  var(--sidebar-border);
+  --color-sidebar-ring:  var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
