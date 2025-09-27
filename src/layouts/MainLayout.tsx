@@ -1,10 +1,10 @@
-import { AppSidebar } from '@/components/app-sidebar'
-import { Separator } from '@/components/ui/separator'
+import { AppSidebar } from '@/components/ui/sidebar/app-sidebar'
+import { Separator } from '@/components/ui/nav-menu/separator'
 import {
   SidebarInset,
   SidebarProvider,
   SidebarTrigger
-} from '@/components/ui/sidebar'
+} from '@/components/ui/sidebar/sidebar'
 import { Outlet } from 'react-router-dom'
 
 export default function Page() {
