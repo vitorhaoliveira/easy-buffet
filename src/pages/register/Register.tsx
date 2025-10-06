@@ -1,3 +1,5 @@
+'use client'
+
 import { useEffect, useMemo, useState } from 'react'
 import type { User } from '@/components/ui/data-table/_interfaces/user'
 import UsersDataTable from '@/components/ui/data-table/_components/users-datatable'
