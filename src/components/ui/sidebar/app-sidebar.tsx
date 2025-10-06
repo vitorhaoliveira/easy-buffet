@@ -2,8 +2,6 @@
 
 import * as React from 'react'
 import {
-  BookOpen,
-  Bot,
   Command,
   Frame,
   LifeBuoy,
@@ -11,7 +9,12 @@ import {
   PieChart,
   Send,
   Settings2,
-  SquareTerminal
+  SquareTerminal,
+  Users,
+  Calendar,
+  Package,
+  UserCheck,
+  DollarSign
 } from 'lucide-react'
 
 import { NavMain } from '@/components/ui/nav-menu/nav-main'
@@ -36,69 +39,95 @@ const data = {
   },
   navMain: [
     {
+      title: 'Dashboard',
+      url: '/',
+      icon: PieChart,
+      isActive: true
+    },
+    {
       title: 'Cadastros',
-      url: '/registration',
+      url: '#',
       icon: SquareTerminal,
-      isActive: true,
       items: [
         {
           title: 'Clientes',
-          url: '#'
+          url: '/cadastros/clientes',
+          icon: Users,
+          items: [
+            {
+              title: 'Listar',
+              url: '/cadastros/clientes'
+            },
+            {
+              title: 'Novo Cliente',
+              url: '/cadastros/clientes/novo'
+            }
+          ]
         },
         {
-          title: 'Eventos',
-          url: '#'
+          title: 'Pacotes/Serviços',
+          url: '/cadastros/pacotes',
+          icon: Package,
+          items: [
+            {
+              title: 'Listar',
+              url: '/cadastros/pacotes'
+            },
+            {
+              title: 'Novo Pacote',
+              url: '/cadastros/pacotes/novo'
+            }
+          ]
         },
         {
-          title: 'Vendedores',
-          url: '#'
+          title: 'Eventos/Reservas',
+          url: '/cadastros/eventos',
+          icon: Calendar,
+          items: [
+            {
+              title: 'Listar',
+              url: '/cadastros/eventos'
+            },
+            {
+              title: 'Nova Reserva',
+              url: '/cadastros/eventos/novo'
+            }
+          ]
+        },
+        {
+          title: 'Usuários',
+          url: '/cadastros/usuarios',
+          icon: UserCheck,
+          items: [
+            {
+              title: 'Listar',
+              url: '/cadastros/usuarios'
+            },
+            {
+              title: 'Novo Usuário',
+              url: '/cadastros/usuarios/novo'
+            }
+          ]
         }
       ]
     },
     {
-      title: 'Models',
+      title: 'Financeiro',
       url: '#',
-      icon: Bot,
+      icon: DollarSign,
       items: [
         {
-          title: 'Genesis',
-          url: '#'
+          title: 'Condições de Pagamento',
+          url: '/financeiro/condicoes-pagamento'
         },
         {
-          title: 'Explorer',
-          url: '#'
-        },
-        {
-          title: 'Quantum',
-          url: '#'
+          title: 'Lançamentos',
+          url: '/financeiro/lancamentos'
         }
       ]
     },
     {
-      title: 'Documentation',
-      url: '#',
-      icon: BookOpen,
-      items: [
-        {
-          title: 'Introduction',
-          url: '#'
-        },
-        {
-          title: 'Get Started',
-          url: '#'
-        },
-        {
-          title: 'Tutorials',
-          url: '#'
-        },
-        {
-          title: 'Changelog',
-          url: '#'
-        }
-      ]
-    },
-    {
-      title: 'Settings',
+      title: 'Configurações',
       url: '#',
       icon: Settings2,
       items: [
@@ -159,7 +188,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size='lg' asChild>
-              <a href='#'>
+              <a href='/'>
                 <div className='flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground'>
                   <Command className='size-4' />
                 </div>
