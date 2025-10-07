@@ -91,12 +91,12 @@ export default function EventForm() {
     
     // Simular salvamento
     setTimeout(() => {
-      navigate('/register/eventos')
+      navigate('/cadastros/eventos')
     }, 1000)
   }
 
   const handleCancel = () => {
-    navigate('/register/eventos')
+    navigate('/cadastros/eventos')
   }
 
   return (

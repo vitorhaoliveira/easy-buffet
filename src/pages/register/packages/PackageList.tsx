@@ -81,7 +81,7 @@ export default function PackageList() {
           </p>
         </div>
         <Button asChild>
-          <Link to='/register/pacotes/novo'>
+          <Link to='/cadastros/pacotes/novo'>
             <Plus className='mr-2 h-4 w-4' />
             Novo Pacote/Serviço
           </Link>
@@ -162,7 +162,7 @@ export default function PackageList() {
                       <Eye className='h-4 w-4' />
                     </Button>
                     <Button variant='ghost' size='sm' asChild>
-                      <Link to={`/register/pacotes/editar/${pkg.id}`}>
+                      <Link to={`/cadastros/pacotes/editar/${pkg.id}`}>
                         <Edit className='h-4 w-4' />
                       </Link>
                     </Button>

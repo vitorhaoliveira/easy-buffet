@@ -75,12 +75,12 @@ export default function PacoteForm() {
     
     // Simular salvamento
     setTimeout(() => {
-      navigate('/register/pacotes')
+      navigate('/cadastros/pacotes')
     }, 1000)
   }
 
   const handleCancel = () => {
-    navigate('/register/pacotes')
+    navigate('/cadastros/pacotes')
   }
 
   return (

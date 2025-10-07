@@ -103,7 +103,7 @@ export default function UsuariosList() {
           </p>
         </div>
         <Button asChild>
-          <Link to='/register/usuarios/novo'>
+          <Link to='/cadastros/usuarios/novo'>
             <Plus className='mr-2 h-4 w-4' />
             Novo Usuário
           </Link>
@@ -197,7 +197,7 @@ export default function UsuariosList() {
                       <Eye className='h-4 w-4' />
                     </Button>
                     <Button variant='ghost' size='sm' asChild>
-                      <Link to={`/register/usuarios/editar/${usuario.id}`}>
+                      <Link to={`/cadastros/usuarios/editar/${usuario.id}`}>
                         <Edit className='h-4 w-4' />
                       </Link>
                     </Button>

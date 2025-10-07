@@ -105,7 +105,7 @@ export default function EventsList() {
           </p>
         </div>
         <Button asChild>
-          <Link to='/register/eventos/novo'>
+          <Link to='/cadastros/eventos/novo'>
             <Plus className='mr-2 h-4 w-4' />
             Nova Reserva
           </Link>
@@ -187,7 +187,7 @@ export default function EventsList() {
                       <Eye className='h-4 w-4' />
                     </Button>
                     <Button variant='ghost' size='sm' asChild>
-                      <Link to={`/register/eventos/editar/${evento.id}`}>
+                      <Link to={`/cadastros/eventos/editar/${evento.id}`}>
                         <Edit className='h-4 w-4' />
                       </Link>
                     </Button>

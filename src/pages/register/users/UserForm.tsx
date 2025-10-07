@@ -81,12 +81,12 @@ export default function UserForm() {
     
     // Simular salvamento
     setTimeout(() => {
-      navigate('/register/usuarios')
+      navigate('/cadastros/usuarios')
     }, 1000)
   }
 
   const handleCancel = () => {
-    navigate('/register/usuarios')
+    navigate('/cadastros/usuarios')
   }
 
   return (
