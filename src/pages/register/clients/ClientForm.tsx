@@ -5,30 +5,30 @@ import { Button } from '@/components/ui/button/button'
 import { Input } from '@/components/ui/input/input'
 import { Label } from '@/components/ui/label/label'
 
-interface ClienteFormData {
-  nome: string
+interface ClientFormData {
+  name: string
   email: string
   telefone: string
   endereco: string
   observacoes: string
 }
 
-export default function ClienteForm() {
+export default function ClientForm() {
   const navigate = useNavigate()
   const { id } = useParams()
   const isEditing = Boolean(id)
 
-  const [formData, setFormData] = useState<ClienteFormData>({
-    nome: '',
+  const [formData, setFormData] = useState<ClientFormData>({
+    name: '',
     email: '',
     telefone: '',
     endereco: '',
     observacoes: ''
   })
 
-  const [errors, setErrors] = useState<Partial<ClienteFormData>>({})
+  const [errors, setErrors] = useState<Partial<ClientFormData>>({})
 
-  const handleInputChange = (field: keyof ClienteFormData, value: string) => {
+  const handleInputChange = (field: keyof ClientFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }))
     // Limpar erro do campo quando usuário começar a digitar
     if (errors[field]) {
@@ -37,10 +37,10 @@ export default function ClienteForm() {
   }
 
   const validateForm = (): boolean => {
-    const newErrors: Partial<ClienteFormData> = {}
+    const newErrors: Partial<ClientFormData> = {}
 
-    if (!formData.nome.trim()) {
-      newErrors.nome = 'Nome é obrigatório'
+    if (!formData.name.trim()) {
+      newErrors.name = 'Nome é obrigatório'
     }
 
     if (!formData.email.trim()) {
@@ -103,16 +103,16 @@ export default function ClienteForm() {
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
           {/* Nome */}
           <div className='space-y-2'>
-            <Label htmlFor='nome'>Nome *</Label>
+            <Label htmlFor='name'>Nome *</Label>
             <Input
-              id='nome'
-              value={formData.nome}
-              onChange={(e) => handleInputChange('nome', e.target.value)}
+              id='name'
+              value={formData.name}
+              onChange={(e) => handleInputChange('name', e.target.value)}
               placeholder='Nome completo do cliente'
-              className={errors.nome ? 'border-red-500' : ''}
+              className={errors.name ? 'border-red-500' : ''}
             />
-            {errors.nome && (
-              <p className='text-sm text-red-500'>{errors.nome}</p>
+            {errors.name && (
+              <p className='text-sm text-red-500'>{errors.name}</p>
             )}
           </div>
 

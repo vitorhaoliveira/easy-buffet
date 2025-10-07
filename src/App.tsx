@@ -5,9 +5,14 @@ import SignIn from './pages/auth/SignIn'
 import SignUp from './pages/auth/SignUp'
 import Dashboard from './pages/dashboard/Dashboard'
 import './index.css'
-import Register from './pages/register1/Register'
-import ClientesList from './pages/register/clients/ClientesList'
-import ClienteForm from './pages/register/clients/ClienteForm'
+import ClientesList from './pages/register/clients/ClientList'
+import ClienteForm from './pages/register/clients/ClientForm'
+import PacotesList from './pages/register/packages/PackageList'
+import PacoteForm from './pages/register/packages/PackageForm'
+import EventosList from './pages/register/events/EventsList'
+import EventoForm from './pages/register/events/EventsForm'
+import UsuariosList from './pages/register/users/UserList'
+import UserForm from './pages/register/users/UserForm'
 
 function App() {
   return (
@@ -19,12 +24,26 @@ function App() {
         </Route>
         <Route element={<MainLayout />}>
           <Route path='/' element={<Dashboard />} />
-          <Route path='/registration' element={<Register />} />
           
           {/* Rotas de Clientes */}
           <Route path='/cadastros/clientes' element={<ClientesList />} />
           <Route path='/cadastros/clientes/novo' element={<ClienteForm />} />
           <Route path='/cadastros/clientes/editar/:id' element={<ClienteForm />} />
+          
+          {/* Rotas de Pacotes */}
+          <Route path='/cadastros/pacotes' element={<PacotesList />} />
+          <Route path='/cadastros/pacotes/novo' element={<PacoteForm />} />
+          <Route path='/cadastros/pacotes/editar/:id' element={<PacoteForm />} />
+          
+          {/* Rotas de Eventos */}
+          <Route path='/cadastros/eventos' element={<EventosList />} />
+          <Route path='/cadastros/eventos/novo' element={<EventoForm />} />
+          <Route path='/cadastros/eventos/editar/:id' element={<EventoForm />} />
+          
+          {/* Rotas de Usuários */}
+          <Route path='/cadastros/usuarios' element={<UsuariosList />} />
+          <Route path='/cadastros/usuarios/novo' element={<UserForm />} />
+          <Route path='/cadastros/usuarios/editar/:id' element={<UserForm />} />
         </Route>
       </Routes>
     </BrowserRouter>
